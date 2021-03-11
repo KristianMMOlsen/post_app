@@ -21,6 +21,10 @@ class PostFactory extends Factory
      */
     public function definition()
     {
+        /* 
+         * model factory to create test data, 
+         * this factory creates a post consisting of 20 words 
+         */
         return [
             'body' => $this->faker->sentence(20),
         ];
