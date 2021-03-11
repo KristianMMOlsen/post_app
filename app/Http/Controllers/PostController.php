@@ -36,7 +36,7 @@ class PostController extends Controller
     //method to delete posts that your user have created
     public function destroy(Post $post)
     {
-        $this->authorize('delete' . $post); //throws excpetion if trying to delete someone elses post
+        $this->authorize('delete', $post); //throws excpetion if trying to delete someone elses post
 
         $post->delete();
 
