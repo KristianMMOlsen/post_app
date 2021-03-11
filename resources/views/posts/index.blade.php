@@ -5,27 +5,39 @@
         <div class="row justify-content-center">
             <div class="col-8 bg-white rounded-3 p-3">
 
-                <!-- form that stores posts created in the textarea -->
-                <form action="{{ route('posts') }}" method="post" class="mb-3">
-                    <h1 class="row justify-content-center">Posts</h1>
-                    @csrf
-                    <div class="row mb-4 px-3">
-                        <textarea name="body"
-                            class="bg-light border-dark border-2 w-100 ta-height p-4 rounded-3 @error('body') border-danger @enderror"
-                            placeholder="Create a new post"></textarea>
-                        @error('body')
-                            <div class="error mt-2 col-12">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                <!-- message for a user to sign in to create a post -->
+                @guest
+                    <div class="row text-center">
+                        <h2>Please <a href="{{ route('login') }}">sign in</a> to create a new post, or register a new account
+                            here:</h2>
                     </div>
-
-                    <!-- button to submit posts -->
                     <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-primary w-25">Post</button>
+                        <a class="btn btn-primary w-25 mb-2" href="{{ route('register') }}">Register</a>
                     </div>
-                </form>
+                @endguest
 
+                <!-- form that stores posts created in the textarea if a user is signed in -->
+                @auth
+                    <form action="{{ route('posts') }}" method="post" class="mb-3">
+                        <h1 class="row justify-content-center">Posts</h1>
+                        @csrf
+                        <div class="row mb-4 px-3">
+                            <textarea name="body"
+                                class="bg-light border-dark border-2 w-100 ta-height p-4 rounded-3 @error('body') border-danger @enderror"
+                                placeholder="Create a new post"></textarea>
+                            @error('body')
+                                <div class="error mt-2 col-12">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <!-- button to submit posts -->
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-primary w-25">Post</button>
+                        </div>
+                    </form>
+                @endauth
                 <!-- iterates through all posts if there are any -->
                 @if ($posts->count())
                     @foreach ($posts as $post)

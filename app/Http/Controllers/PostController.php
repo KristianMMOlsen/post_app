@@ -21,6 +21,14 @@ class PostController extends Controller
         ]);
     }
 
+    // method to show a single post with a new view
+    public function show(Post $post)
+    {
+        return view('posts.show', [
+            'post' => $post
+        ]);
+    }
+
     //method for storing a post in the database
     public function store(Request $request)
     {

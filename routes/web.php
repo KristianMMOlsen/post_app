@@ -43,6 +43,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 //gets the posts into the view
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
+// route for the single post view
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 //stores the new posts created
 Route::post('/posts', [PostController::class, 'store']);
 //deletes existing posts
