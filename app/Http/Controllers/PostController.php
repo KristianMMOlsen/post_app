@@ -9,7 +9,11 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(20); //returns a list of 20 posts per page
+        /* returns a list of 20 posts per page,
+         * also uses eager loading to reduce redundance
+         * by using less queries
+         */
+        $posts = Post::with(['user', 'likes'])->paginate(20); 
 
         return view('posts.index', [
             'posts' => $posts

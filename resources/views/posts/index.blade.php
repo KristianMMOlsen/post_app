@@ -42,30 +42,32 @@
 
                             <!-- like and unlike buttons for every post -->
                             <div class="row text-center">
-                                <!-- shows like button if a user has not liked a post -->
-                                @if (!$post->likedBy(auth()->user()))
-                                <div class="col-2">
-                                    <form action="{{ route('posts.likes', $post) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">Like</button>
-                                    </form>
-                                </div>
-                                <!-- shows a unlike button if a user has liked a post -->
-                                @else
-                                <div class="col-2">
-                                    <form action="{{ route('posts.likes', $post) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-primary">Unlike</button>
-                                    </form>
-                                </div>
-                                @endif
+                                @auth
+                                    <!-- shows a like button if a user has not liked a post -->
+                                    @if (!$post->likedBy(auth()->user()))
+                                        <div class="col-2">
+                                            <form action="{{ route('posts.likes', $post) }}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Like</button>
+                                            </form>
+                                        </div>
+                                        <!-- shows a unlike button if a user has liked a post -->
+                                    @else
+                                        <div class="col-2">
+                                            <form action="{{ route('posts.likes', $post) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-primary">Unlike</button>
+                                            </form>
+                                        </div>
+                                    @endif
+                                @endauth
 
                                 <!-- shows how many likes a post has with a plural function -->
                                 <div class="col-1">
-                                <span>{{ $post->likes->count() }} 
-                                      {{ Str::plural('like', $post->likes->count()) }}</span>
-                                    </div>
+                                    <span>{{ $post->likes->count() }}
+                                        {{ Str::plural('like', $post->likes->count()) }}</span>
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -88,6 +90,7 @@
     .ta-height {
         height: 200px;
     }
+
     /* centers the pagination buttons */
     ul.pagination {
         justify-content: center;
