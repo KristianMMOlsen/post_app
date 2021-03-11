@@ -37,12 +37,15 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+//gets the posts into the view
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
+//stores the new posts created
 Route::post('/posts', [PostController::class, 'store']);
+//deletes existing posts
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
 
 //route to like a post
 Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
 //route to unlike a post
 Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
-
-

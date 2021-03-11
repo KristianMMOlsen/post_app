@@ -21,6 +21,14 @@ class Post extends Model
         return $this->likes->contains('user_id', $user->id);
     }
 
+    // method to stop a user deleting other users posts
+    /*
+    public function ownedBy(User $user)
+    {
+        return $user->id === $this->user_id;
+    }
+    */
+
     // method to show username on posts
     public function user()
     {
