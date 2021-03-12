@@ -7,6 +7,12 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    // auth to make a user have to sign in to create or delete posts, and guests can only view posts
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['store', 'destroy']);
+    }
+
     //method to show the posts
     public function index()
     {

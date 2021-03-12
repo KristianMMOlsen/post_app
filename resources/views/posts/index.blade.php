@@ -23,7 +23,7 @@
                         @csrf
                         <div class="row mb-4 px-3">
                             <textarea name="body"
-                                class="bg-light border-dark border-2 w-100 ta-height p-4 rounded-3 @error('body') border-danger @enderror"
+                                class="bg-light border-secondary border-2 w-100 ta-height p-4 rounded-3 @error('body') border-danger @enderror"
                                 placeholder="Create a new post"></textarea>
                             @error('body')
                                 <div class="error mt-2 col-12">
