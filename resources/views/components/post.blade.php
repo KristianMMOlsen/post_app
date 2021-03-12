@@ -21,36 +21,36 @@
         @auth
             <!-- shows a like button if a user has not liked a post -->
             @if (!$post->likedBy(auth()->user()))
-                <div class="col-2">
+                <div class="col-4">
                     <form action="{{ route('posts.likes', $post) }}" method="post">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Like</button>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-hand-thumbs-up"></i></button>
                     </form>
                 </div>
                 <!-- shows a unlike button if a user has liked a post -->
             @else
-                <div class="col-2">
+                <div class="col-4">
                     <form action="{{ route('posts.likes', $post) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-primary">Unlike</button>
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-hand-thumbs-down"></i></button>
                     </form>
                 </div>
             @endif
         @endauth
 
         <!-- shows how many likes a post has with a plural function -->
-        <div class="col-2">
+        <div class="col-4">
             <span>{{ $post->likes->count() }}
                 {{ Str::plural('like', $post->likes->count()) }}</span>
         </div>
         @can('delete', $post)
             @auth
-                <div class="col-2">
-                    <form action="{{ route('posts.destroy', $post) }}" method="post">
+                <div class="col-4">
+                    <form class="d-flex justify-content-end" action="{{ route('posts.destroy', $post) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Delete <i class="bi bi-x-square"></i></button>
                     </form>
                 </div>
             @endauth

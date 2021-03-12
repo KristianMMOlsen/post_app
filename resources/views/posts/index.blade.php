@@ -11,7 +11,7 @@
                         <h2>Please <a href="{{ route('login') }}">sign in</a> to create a new post, or register a new account
                             here:</h2>
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mb-4">
                         <a class="btn btn-primary w-25 mb-2" href="{{ route('register') }}">Register</a>
                     </div>
                 @endguest
@@ -21,6 +21,7 @@
                     <form action="{{ route('posts') }}" method="post" class="mb-3">
                         <h1 class="row justify-content-center">Posts</h1>
                         @csrf
+                        <!-- textarea for creating new posts -->
                         <div class="row mb-4 px-3">
                             <textarea name="body"
                                 class="bg-light border-secondary border-2 w-100 ta-height p-4 rounded-3 @error('body') border-danger @enderror"
@@ -34,7 +35,7 @@
 
                         <!-- button to submit posts -->
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary w-25">Post</button>
+                            <button type="submit" class="btn btn-primary w-25">Post <i class="bi bi-plus-square"></i></button>
                         </div>
                     </form>
                 @endauth
@@ -46,9 +47,9 @@
                     @endforeach
 
                     <!-- bootstrap pagination -->
-                    <div class="row">
-                        <div class="col-4">Showing {{ $posts->count() }} out of {{ $post->count() }} posts</div>
-                        <div class="col-8">{{ $posts->links() }}</div>
+                    <div class="row mt-4">
+                        <div class="col-6">Showing {{ $posts->firstItem() }} to {{ $posts->lastItem() }} out of {{  $posts->total() }} posts</div>
+                        <div class="col-6 pagination pagination-sm justify-content-end">{{ $posts->links() }}</div>
                     </div>
 
                     <!-- if there are no posts there is an error message -->
