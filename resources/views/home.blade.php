@@ -24,12 +24,18 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-6">
-                        <h3 class="text-secondary">Share your thoughts and ideas</h3>
-                        <img src="../../images/idea.png" class="img-fluid" alt="idea">
+                        <img src="../../images/connect.png" class="img-fluid" alt="idea">
+                    </div>
+                    <div class="col-6 my-auto">
+                        <h3 class="text-secondary text-center">Connect with people</h3>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6 my-auto">
+                        <h3 class="text-secondary text-center ">Share your thoughts and ideas</h3>
                     </div>
                     <div class="col-6">
-                        <h3 class="text-secondary">Connect with people</h3>
-                        <img src="../../images/connect.png" class="img-fluid" alt="idea">
+                        <img src="../../images/idea.png" class="img-fluid" alt="idea">
                     </div>
                 </div>
             </div>

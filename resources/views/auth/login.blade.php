@@ -30,13 +30,14 @@
                         <input type="password" name="password" id="password" placeholder="Password" value=""
                             class="form-control @error('password') border-danger @enderror"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-
+                        <!-- error if user don't write their password -->
                         @error('password')
                             <div class="error mt-2 col-12">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
+                    <!-- checkbox for remember me -->
                     <div class="mb-2 justify-content-center">
                         <input type="checkbox" name="remember" class="mr-2" id="remember">
                         <label for="remember">Remember me</label>
@@ -50,12 +51,9 @@
 @endsection
 
 <style>
+    /* color for the error text */
     .error {
         color: red;
-    }
-
-    .container {
-        height: 100%;
     }
 
 </style>

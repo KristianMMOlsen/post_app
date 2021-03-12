@@ -17,7 +17,7 @@
 
 <body class="bg-light">
     <!-- navigation for the app -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><img src="../../images/navbar_brand.png" class="img-fluid" width="30"
                     height="24" alt="letter">Post-app</a>
@@ -72,9 +72,30 @@
 
 </html>
 <style>
+    /* style of the logout button */
     .logout-btn {
         border: none;
         background-color: white;
+    }
+
+    /* Sticky footer styles */
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 80px;
+    }
+
+    .footer {
+        /* Set the fixed height of the footer here */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #f5f5f5;
     }
 
 </style>

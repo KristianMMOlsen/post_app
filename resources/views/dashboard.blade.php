@@ -9,9 +9,3 @@
         </div>
     </div>
 @endsection
-<style>
-    .container {
-        height: 100%;
-    }
-
-</style>

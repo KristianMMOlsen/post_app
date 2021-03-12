@@ -1,6 +1,6 @@
 @props(['post' => $post])
 
-<div class="container mb-3 bg-light rounded-3 p-2">
+<div class="container bg-light rounded-3 p-2 mb-3">
 
     <div class="row">
         <!-- shows the name of the creator of the post -->
