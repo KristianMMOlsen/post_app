@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mb-4">
         <div class="row justify-content-center">
             <div class="col-8 bg-white rounded-3 p-3">
 
@@ -19,7 +19,7 @@
                 <!-- form that stores posts created in the textarea if a user is signed in -->
                 @auth
                     <form action="{{ route('posts') }}" method="post" class="mb-3">
-                        <h1 class="row justify-content-center">Posts</h1>
+                        <h1 class="text-center">Posts <i class="bi bi-envelope"></i></h1>
                         @csrf
                         <!-- textarea for creating new posts -->
                         <div class="row mb-4 px-3">
@@ -48,7 +48,8 @@
 
                     <!-- bootstrap pagination -->
                     <div class="row mt-4">
-                        <div class="col-6">Showing {{ $posts->firstItem() }} to {{ $posts->lastItem() }} out of {{  $posts->total() }} posts</div>
+                        <div class="col-6">Showing {{ $posts->firstItem() }} to {{ $posts->lastItem() }} out of
+                            {{ $posts->total() }} posts</div>
                         <div class="col-6 pagination pagination-sm justify-content-end">{{ $posts->links() }}</div>
                     </div>
 

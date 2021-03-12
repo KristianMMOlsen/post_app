@@ -82,4 +82,8 @@
         color: red;
     }
 
+    .container {
+        height: 100%;
+    }
+
 </style>

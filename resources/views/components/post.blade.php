@@ -50,7 +50,7 @@
                     <form class="d-flex justify-content-end" action="{{ route('posts.destroy', $post) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete <i class="bi bi-x-square"></i></button>
+                        <button type="submit" class="btn btn-danger">Delete <i class="bi bi-trash"></i></button>
                     </form>
                 </div>
             @endauth
