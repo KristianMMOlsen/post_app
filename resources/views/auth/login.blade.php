@@ -49,11 +49,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    /* color for the error text */
-    .error {
-        color: red;
-    }
-
-</style>

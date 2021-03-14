@@ -19,7 +19,7 @@
     <!-- navigation for the app -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="../../images/navbar_brand.png" class="img-fluid" width="30"
+            <a class="navbar-brand text-decoration-none" href="/"><img src="../../images/navbar_brand.png" class="img-fluid" width="30"
                     height="24" alt="letter">Post-app</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,30 +72,76 @@
 
 </html>
 <style>
-    /* style of the logout button */
-    .logout-btn {
-        border: none;
-        background-color: white;
-    }
+    /* === footer styles for sticky footer ===*/
 
-    /* Sticky footer styles */
+    /* sets height and position for the whole page */
     html {
         position: relative;
         min-height: 100%;
     }
-
+    /* Margin bottom by footer height */
     body {
-        /* Margin bottom by footer height */
         margin-bottom: 80px;
     }
-
+    /* Sets the fixed height of the footer */
     .footer {
-        /* Set the fixed height of the footer here */
         position: absolute;
         bottom: 0;
         width: 100%;
         height: 60px;
         background-color: #f5f5f5;
     }
+    /* =/= */
+
+    /* === links style ===*/
+
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    /* =/= */
+
+    /* === post-container style ===*/
+
+    .post-container{
+        background-color: white;
+        border: 2px solid #f8f9fa;
+        border-radius: 5px;
+    }
+    .post-container:hover{
+        background-color: #f8f9fa;
+    }
+    /* =/= */
+
+    /* === pagination style ===*/
+
+    /* class that sets height for the textarea */
+    .ta-height {
+        height: 200px;
+    }
+
+    /* centers the pagination buttons */
+    ul.pagination {
+        justify-content: center;
+    }
+    /* =/= */
+
+    /* === style of the logout === */
+
+    .logout-btn {
+        border: none;
+        background-color: white;
+    }
+    /* =/= */
+
+    /* === login styles === */
+
+    /* color for the error text set to red */
+    .error {
+        color: red;
+    }
+    /* =/= */
 
 </style>

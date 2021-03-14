@@ -7,14 +7,4 @@
         </div>
     </div>
 </nav>
-<style scoped>
-    a {
-        color: black;
-        text-decoration: none;
-    }
 
-    a:hover {
-        text-decoration: underline;
-    }
-
-</style>

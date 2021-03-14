@@ -7,8 +7,8 @@
 
                 <!-- message for a user to sign in to create a post -->
                 @guest
-                    <div class="row text-center">
-                        <h2>Please <a href="{{ route('login') }}">sign in</a> to create a new post, or register a new account
+                    <div class="row text-center px-5">
+                        <h2>Please <a href="{{ route('login') }}">sign in</a> to create a new post, or register a new user
                             here:</h2>
                     </div>
                     <div class="row justify-content-center mb-4">
@@ -62,16 +62,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    /* class that sets height for the textarea */
-    .ta-height {
-        height: 200px;
-    }
-
-    /* centers the pagination buttons */
-    ul.pagination {
-        justify-content: center;
-    }
-
-</style>

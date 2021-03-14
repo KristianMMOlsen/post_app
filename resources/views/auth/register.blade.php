@@ -76,10 +76,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    .error {
-        color: red;
-    }
-
-</style>
