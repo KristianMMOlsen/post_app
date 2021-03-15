@@ -1,18 +1,18 @@
 @props(['post' => $post])
 <!-- makes a clickable container around the posts to see a single post -->
 <div onclick="location.href='{{ route('posts.show', $post) }}';" style="cursor:pointer;"
-     class="post-container p-2 mb-3">
+    class="post-container p-2 mb-3">
     <div class="row">
         <!-- shows the name of the creator of the post -->
         <a href="{{ route('users.posts', $post->user) }}"
-            class="fw-bold fs-5 text-dark col-4">{{ $post->user->name }}</a>
+            class="fw-bold fs-5 text-dark col-6">{{ $post->user->name }}</a>
 
         <!-- shows the date for when the post was created -->
-        <span class="text-secondary fs-6 col-4">{{ $post->created_at->diffForHumans() }}</span>
+        <span class="text-secondary fs-6 col-6">{{ $post->created_at->diffForHumans() }}</span>
     </div>
 
     <!-- shows the content of each post -->
-    <div class="row"> 
+    <div class="row">
         <p class="mb-2">{{ $post->body }}</p>
     </div>
 
@@ -44,6 +44,7 @@
             <span>{{ $post->likes->count() }}
                 {{ Str::plural('like', $post->likes->count()) }}</span>
         </div>
+        <!-- delete post button -->
         @can('delete', $post)
             @auth
                 <div class="col-4">

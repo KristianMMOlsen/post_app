@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
 
-<body class="bg-light">
+<body class="bg-light mx-0 px-0">
     <!-- navigation for the app -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand text-decoration-none" href="/"><img src="../../images/navbar_brand.png" class="img-fluid" width="30"
-                    height="24" alt="letter">Post-app</a>
+            <a class="navbar-brand text-decoration-none" href="/"><img src="../../images/navbar_brand.png"
+                    class="img-fluid" width="30" height="24" alt="letter">Post-app</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -72,6 +72,12 @@
 
 </html>
 <style>
+    /* === sets the width of the rows === */
+    .row {
+        max-width: 100%;
+        margin: 0;
+    }
+
     /* === footer styles for sticky footer ===*/
 
     /* sets height and position for the whole page */
@@ -79,10 +85,12 @@
         position: relative;
         min-height: 100%;
     }
+
     /* Margin bottom by footer height */
     body {
         margin-bottom: 80px;
     }
+
     /* Sets the fixed height of the footer */
     .footer {
         position: absolute;
@@ -91,28 +99,34 @@
         height: 60px;
         background-color: #f5f5f5;
     }
+
     /* =/= */
 
     /* === links style ===*/
 
-    a{
+    a {
         text-decoration: none;
+        color: #212529;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: underline;
     }
+
     /* =/= */
 
     /* === post-container style ===*/
 
-    .post-container{
+    .post-container {
         background-color: white;
         border: 2px solid #f8f9fa;
         border-radius: 5px;
     }
-    .post-container:hover{
+
+    .post-container:hover {
         background-color: #f8f9fa;
     }
+
     /* =/= */
 
     /* === pagination style ===*/
@@ -126,6 +140,7 @@
     ul.pagination {
         justify-content: center;
     }
+
     /* =/= */
 
     /* === style of the logout === */
@@ -134,6 +149,7 @@
         border: none;
         background-color: white;
     }
+
     /* =/= */
 
     /* === login styles === */
@@ -142,6 +158,7 @@
     .error {
         color: red;
     }
+
     /* =/= */
 
 </style>
