@@ -72,6 +72,12 @@
 
 </html>
 <style>
+    #uname-style{
+        text-decoration: none;
+    }
+    #uname-style:hover{
+        text-decoration: underline;
+    }
     /* === sets the width of the rows === */
     .row {
         max-width: 100%;
