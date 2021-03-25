@@ -39,10 +39,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [ //validates the textarea
+            'title' => 'required',
             'body' => 'required'
         ]);
 
-        $request->user()->posts()->create($request->only('body'));
+        $request->user()->posts()->create($request->only('title', 'body'));
 
         return back();
     }

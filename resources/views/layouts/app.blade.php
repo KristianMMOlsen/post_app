@@ -72,12 +72,18 @@
 
 </html>
 <style>
-    #uname-style{
+    .display-comment {
+        margin-left: 40px;
+    }
+
+    #uname-style {
         text-decoration: none;
     }
-    #uname-style:hover{
+
+    #uname-style:hover {
         text-decoration: underline;
     }
+
     /* === sets the width of the rows === */
     .row {
         max-width: 100%;
